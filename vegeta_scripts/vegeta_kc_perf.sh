@@ -1,19 +1,21 @@
 #!/bin/bash
 echo "Running vegeta benchmark..."
 
-CLIENT_SECRET="8eaa875c-90e5-4923-9686-784d9efb4ee9"
+HOST_NAME="centos7-runtime.jenkins.aerobase.org"
+REALM="aerobase"
+CLIENT_SECRET="86199ca4-73e0-423c-b64f-550abe5da3b4"
 CLIENT_ID="performance"
 
-USERNAME="m.yanivn@c-b4.com"
-PASSWORD="123"
+USERNAME="admin"
+PASSWORD="password"
 
-SCHEME="https"
+SCHEME="http"
 
-KEYCLOAK_TOKEN_URL="staging-wcs.c-b4.com/auth/realms/unifiedpush-installations/protocol/openid-connect/token"
-KEYCLOAK_ENTITLEMENT_URL="staging-wcs.c-b4.com/auth/realms/unifiedpush-installations/authz/entitlement/performance"
-KEYCLOAK_USERINFO_URL="staging-wcs.c-b4.com/auth/realms/unifiedpush-installations/protocol/openid-connect/userinfo"
-KEYCLOAK_REFRESH_URL="staging-wcs.c-b4.com/auth/realms/unifiedpush-installations/protocol/openid-connect/token"
-KEYCLOAK_GITHUB_TOKEN_URL="staging-wcs.c-b4.com/auth/realms/unifiedpush-installations/broker/github/token"
+KEYCLOAK_TOKEN_URL="${HOST_NAME}/auth/realms/${REALM}/protocol/openid-connect/token"
+KEYCLOAK_ENTITLEMENT_URL="${HOST_NAME}/auth/realms/${REALM}/authz/entitlement/performance"
+KEYCLOAK_USERINFO_URL="${HOST_NAME}/auth/realms/${REALM}/protocol/openid-connect/userinfo"
+KEYCLOAK_REFRESH_URL="${HOST_NAME}/auth/realms/${REALM}/protocol/openid-connect/token"
+KEYCLOAK_GITHUB_TOKEN_URL="${HOST_NAME}/auth/realms/${REALM}/broker/github/token"
 MY_SPACE_NAME="Default Resource"
 
 
